@@ -19,13 +19,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       height: 83,
       decoration: BoxDecoration(
         color: AppColors.black,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.black,
-            blurRadius: 8,
-            offset: const Offset(0, -8), // Negative Y offset moves shadow to the TOP
-          ),
-        ],
+        boxShadow: [BoxShadow(color: AppColors.black, blurRadius: 8, offset: const Offset(0, -8))],
       ),
       padding: const EdgeInsets.only(top: 12),
       child: Row(

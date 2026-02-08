@@ -59,7 +59,7 @@ class LastTripTile extends StatelessWidget {
                           ],
                         ),
                       ),
-                      RebookButton(),
+                      RebookButton(icon: Assets.icons.iconExtraRebook, text: 'Rebook'),
                     ],
                   ),
                 ),

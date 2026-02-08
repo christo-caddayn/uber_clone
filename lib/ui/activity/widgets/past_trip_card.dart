@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uber/gen/assets.gen.dart';
 import 'package:uber/models/ride_details_model.dart';
 import 'package:uber/ui/activity/activity_details/activity_details_screen.dart';
 import 'package:uber/ui/activity/widgets/rebook_button.dart';
@@ -46,7 +47,13 @@ class PastTripCard extends StatelessWidget {
               style: TextStyle(color: AppColors.white, fontSize: 14),
             ),
             SizedBox(height: 18),
-            Row(children: [RatingButton(), SizedBox(width: 12), RebookButton()]),
+            Row(
+              children: [
+                RebookButton(icon: Assets.icons.iconExtraRateRide, text: 'Rate'),
+                SizedBox(width: 12),
+                RebookButton(icon: Assets.icons.iconExtraRebook, text: 'Rebook'),
+              ],
+            ),
           ],
         ),
       ),

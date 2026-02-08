@@ -4,6 +4,7 @@ import 'package:uber/widgets/svg_image.dart';
 
 class BottomNavigationIcon extends StatelessWidget {
   final String icon;
+  final String iconActive;
   final String text;
   final int index;
   final int currentIndex;
@@ -11,6 +12,7 @@ class BottomNavigationIcon extends StatelessWidget {
   const BottomNavigationIcon({
     super.key,
     required this.icon,
+    required this.iconActive,
     required this.text,
     required this.index,
     required this.currentIndex,
@@ -24,7 +26,7 @@ class BottomNavigationIcon extends StatelessWidget {
       child: Column(
         children: [
           SvgImage(
-            image: icon,
+            image: currentIndex == index ? iconActive : icon,
             color: currentIndex == index ? AppColors.white : AppColors.offWhite,
             height: 18,
             width: 26,

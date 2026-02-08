@@ -21,38 +21,21 @@ class SearchBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(width: 10),
-          SvgImage(
-            image: Assets.icons.search,
-            height: 18,
-            width: 18,
-            color: AppColors.white,
-          ),
+          SvgImage(image: Assets.icons.search, height: 18, width: 18, color: AppColors.white),
           const SizedBox(width: 8),
           Text(
             "Where to?",
-            style: TextStyle(
-              color: AppColors.offWhite,
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
+            style: TextStyle(color: AppColors.offWhite, fontSize: 20, fontWeight: FontWeight.w700),
           ),
           const Spacer(),
           Container(
             height: 36,
             alignment: Alignment.center,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-            decoration: BoxDecoration(
-              color: AppColors.grey,
-              borderRadius: BorderRadius.circular(36),
-            ),
+            decoration: BoxDecoration(color: AppColors.grey, borderRadius: BorderRadius.circular(36)),
             child: Row(
               children: [
-                SvgImage(
-                  image: Assets.icons.calendar,
-                  height: 16,
-                  width: 16,
-                  color: AppColors.white,
-                ),
+                SvgImage(image: Assets.icons.iconExtraPlanRide, height: 14, width: 14, color: AppColors.white),
                 const SizedBox(width: 6),
                 Text(
                   "Later",
@@ -60,7 +43,7 @@ class SearchBarWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

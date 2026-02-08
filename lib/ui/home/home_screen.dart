@@ -63,7 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 36,
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                         decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.grey),
-                        child: SvgImage(image: Assets.icons.arrowRight, height: 18, width: 18, color: AppColors.white),
+                        child: SvgImage(
+                          image: Assets.icons.iconExtraArrow,
+                          height: 18,
+                          width: 18,
+                          color: AppColors.white,
+                        ),
                       ),
                     ),
                   ],

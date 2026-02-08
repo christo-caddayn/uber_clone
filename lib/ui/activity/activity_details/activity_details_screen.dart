@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:uber/gen/assets.gen.dart';
 import 'package:uber/models/ride_details_model.dart';
 import 'package:uber/utils/format_date.dart';
 import 'widgets/help_action_tile.dart';
@@ -92,10 +93,10 @@ class ActivityDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
-                  children: const [
-                    TripActionPill(icon: Icons.receipt_long, label: "Receipt"),
+                  children: [
+                    TripActionPill(icon: Assets.icons.icon3Activity, label: "Receipt"),
                     SizedBox(width: 12),
-                    TripActionPill(icon: Icons.description, label: "Invoice"),
+                    TripActionPill(icon: Assets.icons.iconExtraInvoice, label: "Invoice"),
                   ],
                 ),
               ),
@@ -120,7 +121,7 @@ class ActivityDetailsScreen extends StatelessWidget {
 
               //TIP
               TripInfoActionRow(
-                icon: Icons.volunteer_activism,
+                icon: Assets.icons.iconExtraTip,
                 text: ride.tip == 0 ? "No tip added" : "€${ride.tip}",
                 actionText: ride.tip == 0 ? "Add tip" : "",
               ),
@@ -129,7 +130,8 @@ class ActivityDetailsScreen extends StatelessWidget {
 
               //RATING
               TripInfoActionRow(
-                icon: Icons.star_border,
+                icon: Assets.icons.iconExtraRateRide,
+
                 text: ride.rating == 0 ? "No rating" : "Rated ${ride.rating}",
                 actionText: ride.rating == 0 ? "Rate" : "",
               ),
@@ -149,7 +151,7 @@ class ActivityDetailsScreen extends StatelessWidget {
               const SizedBox(height: 12),
 
               HelpActionTile(
-                icon: Icons.key,
+                icon: Assets.icons.iconExtraLostItem,
                 title: "Find lost item",
                 subtitle: "We can help you get in touch with your driver",
               ),
@@ -157,7 +159,7 @@ class ActivityDetailsScreen extends StatelessWidget {
               CustomDivider(),
 
               HelpActionTile(
-                icon: Icons.shield_outlined,
+                icon: Assets.icons.iconExtraSafetyIssue,
                 title: "Report safety issue",
                 subtitle: "Report any safety related issues to us",
               ),

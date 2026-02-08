@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uber/utils/colors.dart';
+import 'package:uber/widgets/svg_image.dart';
 
 class HelpActionTile extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String title;
   final String subtitle;
   final VoidCallback? onTap;
@@ -18,7 +19,8 @@ class HelpActionTile extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(icon, color: AppColors.white),
+            SvgImage(image: icon, height: 20, width: 20, color: AppColors.white),
+
             const SizedBox(width: 16),
             Expanded(
               child: Column(

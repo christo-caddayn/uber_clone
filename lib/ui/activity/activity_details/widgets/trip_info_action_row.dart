@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:uber/gen/assets.gen.dart';
 import 'package:uber/utils/colors.dart';
+import 'package:uber/widgets/svg_image.dart';
 
 class TripInfoActionRow extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String text;
   final String actionText;
 
@@ -14,7 +16,8 @@ class TripInfoActionRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       child: Row(
         children: [
-          Icon(icon, color: AppColors.white),
+          SvgImage(image: icon, height: 20, width: 20, color: AppColors.white),
+
           const SizedBox(width: 12),
           Expanded(
             child: Text(

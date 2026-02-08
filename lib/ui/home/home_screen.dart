@@ -28,32 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
             slivers: [
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
 
-              const SliverToBoxAdapter(
-                child: TitleBar(title: "Uber"),
-              ),
+              const SliverToBoxAdapter(child: TitleBar(title: "Uber")),
 
               const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
               // Search Bar
-              SliverPersistentHeader(
-                pinned: true,
-                floating: false,
-                delegate: SearchBarSliverDelegate(),
-              ),
+              SliverPersistentHeader(pinned: true, floating: false, delegate: SearchBarSliverDelegate()),
 
               const SliverToBoxAdapter(child: SizedBox(height: 8)),
 
               // Recent Locations
               SliverList(
                 delegate: SliverChildListDelegate([
-                  const LocationTile(
-                    title: "DIE ZIMMEREI Apartments - Wien",
-                    address: "Vorgartenstraße 204, Wien",
-                  ),
-                  const LocationTile(
-                    title: "Deloitte Wien",
-                    address: "Renngasse 1, Wien",
-                  ),
+                  const LocationTile(title: "DIE ZIMMEREI Apartments - Wien", address: "Vorgartenstraße 204, Wien"),
+                  const LocationTile(title: "Deloitte Wien", address: "Renngasse 1, Wien"),
                 ]),
               ),
 
@@ -74,18 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 36,
                         width: 36,
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppColors.grey,
-                        ),
-                        child: SvgImage(
-                          image: Assets.icons.arrowRight,
-                          height: 18,
-                          width: 18,
-                          color: AppColors.white,
-                        ),
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.grey),
+                        child: SvgImage(image: Assets.icons.arrowRight, height: 18, width: 18, color: AppColors.white),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -93,35 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SliverToBoxAdapter(child: SizedBox(height: 20)),
 
               // Service Grid
-              SliverToBoxAdapter(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ServiceItem(
-                        label: "Ride", icon: Image.asset("assets/images/top_bar_rides_3d.png", width: 64, height: 48)),
-                    const Spacer(flex: 1),
-                    ServiceItem(
-                      label: "Reserve",
-                      icon: Image.asset("assets/images/reserve_clock.png", width: 64, height: 48),
-                    ),
-                    const Spacer(flex: 1),
-                    ServiceItem(
-                        label: "2-Wheels",
-                        icon: Transform.scale(
-                            scale: .75,
-                            child: Image.asset(
-                              "assets/images/ub__ic_bike_default_map_marker.png",
-                              width: 64,
-                              height: 48,
-                            ))),
-                    const Spacer(flex: 1),
-                    ServiceItem(
-                        label: "Seniors",
-                        icon: Transform.scale(
-                            scale: 1.25, child: Image.asset("assets/images/intercity.png", width: 64, height: 48))),
-                  ],
-                ),
-              ),
+              SliverToBoxAdapter(child: IconsRow()),
 
               const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
@@ -144,19 +96,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: "Add a stop or 5",
                         subtitle: "Pick up something along the way",
                         imagePlaceholderColor: Transform.scale(
-                            scale: 1.25,
-                            child: Image.asset(
-                              "assets/images/dropping.webp",
-                              fit: BoxFit.cover,
-                            )),
+                          scale: 1.25,
+                          child: Image.asset("assets/images/dropping.webp", fit: BoxFit.cover),
+                        ),
                       ),
                       PromoCard(
                         title: "Go on 2 wheels",
                         subtitle: "Take an electric bike",
-                        imagePlaceholderColor: Image.asset(
-                          "assets/images/bike.webp",
-                          fit: BoxFit.cover,
-                        ),
+                        imagePlaceholderColor: Image.asset("assets/images/bike.webp", fit: BoxFit.cover),
                       ),
                     ],
                   ),
@@ -182,18 +129,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       PromoCard(
                         title: "Take an electric bike",
                         subtitle: "Help reduce emissions",
-                        imagePlaceholderColor: Image.asset(
-                          "assets/images/bike.webp",
-                          fit: BoxFit.cover,
-                        ),
+                        imagePlaceholderColor: Image.asset("assets/images/bike.webp", fit: BoxFit.cover),
                       ),
                       PromoCard(
                         title: "Go faster than traffic",
                         subtitle: "Skip the traffic jams",
-                        imagePlaceholderColor: Image.asset(
-                          "assets/images/car_highway.webp",
-                          fit: BoxFit.cover,
-                        ),
+                        imagePlaceholderColor: Image.asset("assets/images/car_highway.webp", fit: BoxFit.cover),
                       ),
                     ],
                   ),
@@ -219,18 +160,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       PromoCard(
                         title: "Book Intercity",
                         subtitle: "Travel outstations with ease",
-                        imagePlaceholderColor: Image.asset(
-                          "assets/images/airport.webp",
-                          fit: BoxFit.cover,
-                        ),
+                        imagePlaceholderColor: Image.asset("assets/images/airport.webp", fit: BoxFit.cover),
                       ),
                       PromoCard(
                         title: "Book premier",
                         subtitle: "Extra options for special days",
-                        imagePlaceholderColor: Image.asset(
-                          "assets/images/start_journey.webp",
-                          fit: BoxFit.cover,
-                        ),
+                        imagePlaceholderColor: Image.asset("assets/images/start_journey.webp", fit: BoxFit.cover),
                       ),
                     ],
                   ),
@@ -252,13 +187,7 @@ class SearchBarSliverDelegate extends SliverPersistentHeaderDelegate {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: AppColors.black,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.black,
-            blurRadius: 8,
-            offset: Offset(0, 8),
-          ),
-        ],
+        boxShadow: [BoxShadow(color: AppColors.black, blurRadius: 8, offset: Offset(0, 8))],
       ),
       child: const SearchBarWidget(),
     );
@@ -273,5 +202,34 @@ class SearchBarSliverDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
     return false;
+  }
+}
+
+class IconsRow extends StatelessWidget {
+  const IconsRow({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ServiceItem(label: "Ride", icon: Image.asset("assets/images/top_bar_rides_3d.png", width: 64, height: 48)),
+        const Spacer(flex: 1),
+        ServiceItem(label: "Reserve", icon: Image.asset("assets/images/reserve_clock.png", width: 64, height: 48)),
+        const Spacer(flex: 1),
+        ServiceItem(
+          label: "2-Wheels",
+          icon: Transform.scale(
+            scale: .75,
+            child: Image.asset("assets/images/ub__ic_bike_default_map_marker.png", width: 64, height: 48),
+          ),
+        ),
+        const Spacer(flex: 1),
+        ServiceItem(
+          label: "Seniors",
+          icon: Transform.scale(scale: 1.25, child: Image.asset("assets/images/intercity.png", width: 64, height: 48)),
+        ),
+      ],
+    );
   }
 }

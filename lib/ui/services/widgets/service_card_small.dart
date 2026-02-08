@@ -7,16 +7,25 @@ import '../../../utils/colors.dart';
 class ServiceCardSmall extends StatelessWidget {
   final String title;
   final dynamic asset;
+  final bool isPng;
+  final double? width;
+  final double? height;
+  final double? padding;
 
-  const ServiceCardSmall({required this.title, required this.asset});
+  const ServiceCardSmall({
+    super.key,
+    required this.title,
+    required this.asset,
+    this.isPng = false,
+    this.width,
+    this.height,
+    this.padding,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[900],
-        borderRadius: BorderRadius.circular(12),
-      ),
+      decoration: BoxDecoration(color: Colors.grey[900], borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.only(top: 12, bottom: 8),
         child: Column(
@@ -24,9 +33,15 @@ class ServiceCardSmall extends StatelessWidget {
           children: [
             _buildAsset(),
             const SizedBox(height: 5),
-            Text(title,
-                style: TextStyle(
-                    color: AppColors.white, fontSize: 12, fontFamily: 'UberMove', fontWeight: FontWeight.w500)),
+            Text(
+              title,
+              style: TextStyle(
+                color: AppColors.white,
+                fontSize: 12,
+                fontFamily: 'UberMove',
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
@@ -34,8 +49,17 @@ class ServiceCardSmall extends StatelessWidget {
   }
 
   Widget _buildAsset() {
+    if (isPng) {
+      return Padding(
+        padding: EdgeInsets.only(top: padding ?? 0),
+        child: Center(
+          child: Image.asset(asset, width: width ?? 52, height: height ?? 48),
+        ),
+      );
+    }
+
     if (asset is AssetGenImage) {
-      return asset.image(height: 50.00, fit: BoxFit.contain);
+      return asset.image(height: height ?? 48, fit: BoxFit.contain);
     } else if (asset is String) {
       return Padding(
         padding: const EdgeInsets.only(top: 8.0),

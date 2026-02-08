@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:uber/gen/assets.gen.dart';
 import 'package:uber/utils/colors.dart';
 
 class RebookButton extends StatelessWidget {

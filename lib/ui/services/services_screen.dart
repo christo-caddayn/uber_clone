@@ -49,7 +49,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
               //
               //   ],
               // ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 24),
               IconsRow(),
               // Row(
               //   children: [

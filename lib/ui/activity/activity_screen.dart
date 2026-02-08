@@ -21,7 +21,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Activity", style: TextStyle(color: AppColors.white, fontSize: 24, fontWeight: FontWeight.bold)),
+          SizedBox(height: 60),
+          Text(
+            "Activity",
+            style: TextStyle(color: AppColors.white, fontSize: 24, fontWeight: FontWeight.bold),
+          ),
           SizedBox(height: 12),
           Expanded(
             child: SingleChildScrollView(

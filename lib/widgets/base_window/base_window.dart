@@ -23,23 +23,21 @@ class _BaseWindowState extends State<BaseWindow> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.black,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: currentScreen == 0
-                  ? HomeScreen(onSuggestionsTap: () => _onTap(1))
-                  : currentScreen == 1
-                      ? ServicesScreen()
-                      : currentScreen == 2
-                          ? ActivityScreen()
-                          : currentScreen == 3
-                              ? InboxScreen()
-                              : AccountScreen(),
-            ),
-            CustomBottomNavigationBar(onTap: _onTap, currentIndex: currentScreen)
-          ],
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: currentScreen == 0
+                ? HomeScreen(onSuggestionsTap: () => _onTap(1))
+                : currentScreen == 1
+                ? ServicesScreen()
+                : currentScreen == 2
+                ? ActivityScreen()
+                : currentScreen == 3
+                ? InboxScreen()
+                : AccountScreen(),
+          ),
+          CustomBottomNavigationBar(onTap: _onTap, currentIndex: currentScreen),
+        ],
       ),
     );
   }

@@ -24,9 +24,16 @@ class BottomNavigationIcon extends StatelessWidget {
       child: Column(
         children: [
           SvgImage(
-              image: icon, color: currentIndex == index ? AppColors.white : AppColors.offWhite, height: 26, width: 26),
-          Text(text,
-              style: TextStyle(color: currentIndex == index ? AppColors.white : AppColors.offWhite, fontSize: 14)),
+            image: icon,
+            color: currentIndex == index ? AppColors.white : AppColors.offWhite,
+            height: 18,
+            width: 26,
+          ),
+          SizedBox(height: 4),
+          Text(
+            text,
+            style: TextStyle(color: currentIndex == index ? AppColors.white : AppColors.offWhite, fontSize: 14),
+          ),
         ],
       ),
     );

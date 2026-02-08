@@ -14,11 +14,7 @@ class LastTripTile extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute<void>(
-          builder: (context) => ActivityDetailsScreen(
-            model: rideDetailsModel,
-          ),
-        ),
+        MaterialPageRoute<void>(builder: (context) => ActivityDetailsScreen(model: rideDetailsModel)),
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -26,10 +22,10 @@ class LastTripTile extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(7),
-              decoration: BoxDecoration(color: AppColors.secondaryText, borderRadius: BorderRadius.circular(4)),
-              child: Image.asset(Assets.images.car.path, height: 45, width: 45),
+              decoration: BoxDecoration(color: AppColors.grey, borderRadius: BorderRadius.circular(8)),
+              child: Image.asset(Assets.images.car.path, height: 50, width: 50),
             ),
-            SizedBox(width: 8),
+            SizedBox(width: 16),
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(bottom: 8),
@@ -45,17 +41,20 @@ class LastTripTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              rideDetailsModel.destination.address,
+                              // rideDetailsModel.destination.address,
+                              rideDetailsModel.listTitle.isNotEmpty
+                                  ? rideDetailsModel.listTitle
+                                  : rideDetailsModel.destination.address,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(color: AppColors.white, fontSize: 12),
+                              style: TextStyle(color: AppColors.white, fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                             Text(
                               formatDate(date: rideDetailsModel.date, time: rideDetailsModel.startTime),
-                              style: TextStyle(color: AppColors.offWhite, fontSize: 10),
+                              style: TextStyle(color: AppColors.white, fontSize: 14),
                             ),
                             Text(
-                              "${rideDetailsModel.currency} ${rideDetailsModel.amount.toString()}",
-                              style: TextStyle(color: AppColors.offWhite, fontSize: 10),
+                              "€ ${rideDetailsModel.amount.toString()}",
+                              style: TextStyle(color: AppColors.white, fontSize: 14),
                             ),
                           ],
                         ),

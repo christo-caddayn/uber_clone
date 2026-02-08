@@ -14,14 +14,10 @@ class PastTripCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute<void>(
-          builder: (context) => ActivityDetailsScreen(
-            model: rideDetailsModel,
-          ),
-        ),
+        MaterialPageRoute<void>(builder: (context) => ActivityDetailsScreen(model: rideDetailsModel)),
       ),
       child: Container(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: AppColors.grey, width: 1.4),
@@ -29,15 +25,27 @@ class PastTripCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(rideDetailsModel.mapPath),
+            SizedBox(
+              width: double.infinity,
+              child: ClipRRect(
+                borderRadius: BorderRadiusGeometry.all(Radius.circular(8)),
+                child: Image.asset(rideDetailsModel.mapPath, height: 150, fit: BoxFit.cover),
+              ),
+            ),
             SizedBox(height: 16),
-            Text(rideDetailsModel.destination.address, style: TextStyle(color: AppColors.white, fontSize: 16)),
+            Text(
+              rideDetailsModel.destination.address,
+              style: TextStyle(color: AppColors.white, fontSize: 19, fontWeight: FontWeight.bold),
+            ),
             Text(
               formatDate(date: rideDetailsModel.date, time: rideDetailsModel.startTime),
-              style: TextStyle(color: AppColors.offWhite, fontSize: 12),
+              style: TextStyle(color: AppColors.white, fontSize: 14),
             ),
-            Text("\$15.88", style: TextStyle(color: AppColors.offWhite, fontSize: 12)),
-            SizedBox(height: 8),
+            Text(
+              "€ ${rideDetailsModel.amount.toStringAsFixed(2)}",
+              style: TextStyle(color: AppColors.white, fontSize: 14),
+            ),
+            SizedBox(height: 18),
             RebookButton(),
           ],
         ),

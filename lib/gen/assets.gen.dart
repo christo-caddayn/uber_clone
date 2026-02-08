@@ -51,18 +51,28 @@ class $AssetsIconsGen {
   String get train => 'assets/icons/train.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [activity, arrowRight, calendar, clock, home, lens, notifications, person, refresh, search, services, train];
+  List<String> get values => [
+    activity,
+    arrowRight,
+    calendar,
+    clock,
+    home,
+    lens,
+    notifications,
+    person,
+    refresh,
+    search,
+    services,
+    train,
+  ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/two_wheels.png
-  AssetGenImage get a2wheels => const AssetGenImage('assets/images/two_wheels.png');
-
   /// File path: assets/images/airport.webp
-  AssetGenImage get airport => const AssetGenImage('assets/images/airport.webp');
+  AssetGenImage get airport =>
+      const AssetGenImage('assets/images/airport.webp');
 
   /// File path: assets/images/bike.webp
   AssetGenImage get bike => const AssetGenImage('assets/images/bike.webp');
@@ -71,60 +81,73 @@ class $AssetsImagesGen {
   AssetGenImage get car => const AssetGenImage('assets/images/car.png');
 
   /// File path: assets/images/car_highway.webp
-  AssetGenImage get carHighway => const AssetGenImage('assets/images/car_highway.webp');
+  AssetGenImage get carHighway =>
+      const AssetGenImage('assets/images/car_highway.webp');
 
   /// File path: assets/images/dropping.webp
-  AssetGenImage get dropping => const AssetGenImage('assets/images/dropping.webp');
+  AssetGenImage get dropping =>
+      const AssetGenImage('assets/images/dropping.webp');
 
   /// File path: assets/images/filter.png
   AssetGenImage get filter => const AssetGenImage('assets/images/filter.png');
 
   /// File path: assets/images/intercity.png
-  AssetGenImage get intercity => const AssetGenImage('assets/images/intercity.png');
+  AssetGenImage get intercity =>
+      const AssetGenImage('assets/images/intercity.png');
 
   /// File path: assets/images/reserve_clock .png
-  AssetGenImage get reserveClockPng => const AssetGenImage('assets/images/reserve_clock .png');
+  AssetGenImage get reserveClockPng =>
+      const AssetGenImage('assets/images/reserve_clock .png');
 
   /// File path: assets/images/reserve_clock.png
-  AssetGenImage get reserveClockPng_ => const AssetGenImage('assets/images/reserve_clock.png');
+  AssetGenImage get reserveClockPng_ =>
+      const AssetGenImage('assets/images/reserve_clock.png');
 
   /// File path: assets/images/seniors.png
   AssetGenImage get seniors => const AssetGenImage('assets/images/seniors.png');
 
   /// File path: assets/images/start_journey.webp
-  AssetGenImage get startJourney => const AssetGenImage('assets/images/start_journey.webp');
+  AssetGenImage get startJourney =>
+      const AssetGenImage('assets/images/start_journey.webp');
 
   /// File path: assets/images/teens.png
   AssetGenImage get teens => const AssetGenImage('assets/images/teens.png');
 
   /// File path: assets/images/top_bar_rides_3d.png
-  AssetGenImage get topBarRides3d => const AssetGenImage('assets/images/top_bar_rides_3d.png');
+  AssetGenImage get topBarRides3d =>
+      const AssetGenImage('assets/images/top_bar_rides_3d.png');
+
+  /// File path: assets/images/two_wheels.png
+  AssetGenImage get twoWheels =>
+      const AssetGenImage('assets/images/two_wheels.png');
 
   /// File path: assets/images/ub__ic_bike_default_map_marker.png
-  AssetGenImage get ubIcBikeDefaultMapMarker => const AssetGenImage('assets/images/ub__ic_bike_default_map_marker.png');
+  AssetGenImage get ubIcBikeDefaultMapMarker =>
+      const AssetGenImage('assets/images/ub__ic_bike_default_map_marker.png');
 
   /// File path: assets/images/uber_one.png
-  AssetGenImage get uberOne => const AssetGenImage('assets/images/uber_one.png');
+  AssetGenImage get uberOne =>
+      const AssetGenImage('assets/images/uber_one.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        a2wheels,
-        airport,
-        bike,
-        car,
-        carHighway,
-        dropping,
-        filter,
-        intercity,
-        reserveClockPng,
-        reserveClockPng_,
-        seniors,
-        startJourney,
-        teens,
-        topBarRides3d,
-        ubIcBikeDefaultMapMarker,
-        uberOne
-      ];
+    airport,
+    bike,
+    car,
+    carHighway,
+    dropping,
+    filter,
+    intercity,
+    reserveClockPng,
+    reserveClockPng_,
+    seniors,
+    startJourney,
+    teens,
+    topBarRides3d,
+    twoWheels,
+    ubIcBikeDefaultMapMarker,
+    uberOne,
+  ];
 }
 
 class $AssetsMapsGen {
@@ -158,7 +181,8 @@ class $AssetsMapsGen {
   AssetGenImage get obada => const AssetGenImage('assets/maps/Obada.png');
 
   /// File path: assets/maps/Tajeddine.png
-  AssetGenImage get tajeddine => const AssetGenImage('assets/maps/Tajeddine.png');
+  AssetGenImage get tajeddine =>
+      const AssetGenImage('assets/maps/Tajeddine.png');
 
   /// File path: assets/maps/Uzgur.png
   AssetGenImage get uzgur => const AssetGenImage('assets/maps/Uzgur.png');
@@ -167,8 +191,20 @@ class $AssetsMapsGen {
   AssetGenImage get yusuf => const AssetGenImage('assets/maps/Yusuf.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [ahmet, anil, flavius, kemal, merve, miroslav, mustafa, mustafa2, obada, tajeddine, uzgur, yusuf];
+  List<AssetGenImage> get values => [
+    ahmet,
+    anil,
+    flavius,
+    kemal,
+    merve,
+    miroslav,
+    mustafa,
+    mustafa2,
+    obada,
+    tajeddine,
+    uzgur,
+    yusuf,
+  ];
 }
 
 class Assets {
@@ -246,15 +282,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

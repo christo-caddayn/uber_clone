@@ -7,13 +7,7 @@ class HelpActionTile extends StatelessWidget {
   final String subtitle;
   final VoidCallback? onTap;
 
-  const HelpActionTile({
-    super.key,
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    this.onTap,
-  });
+  const HelpActionTile({super.key, required this.icon, required this.title, required this.subtitle, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -32,27 +26,14 @@ class HelpActionTile extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: TextStyle(color: AppColors.white, fontSize: 17, fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 13,
-                    ),
-                  ),
+                  Text(subtitle, style: TextStyle(color: AppColors.white, fontSize: 13)),
                 ],
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: AppColors.grey,
-            ),
+            Icon(Icons.chevron_right, color: AppColors.grey),
           ],
         ),
       ),

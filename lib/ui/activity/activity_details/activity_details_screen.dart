@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:uber/models/ride_details_model.dart';
+import 'package:uber/utils/format_date.dart';
 import 'widgets/help_action_tile.dart';
 import 'widgets/customer_support_card.dart';
 import 'widgets/trip_map_image.dart';
@@ -11,10 +13,7 @@ import 'package:uber/utils/colors.dart';
 class ActivityDetailsScreen extends StatelessWidget {
   final RideDetailsModel model;
 
-  const ActivityDetailsScreen({
-    super.key,
-    required this.model,
-  });
+  const ActivityDetailsScreen({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +39,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "Trip details",
-                          style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          style: TextStyle(color: AppColors.white, fontSize: 20, fontWeight: FontWeight.w700),
                         ),
                       ),
                     ),
@@ -54,7 +49,7 @@ class ActivityDetailsScreen extends StatelessWidget {
               ),
 
               ///MAP IMAGE
-              TripMapImage(mapPath: ride.mapPath),
+              TripMapImage(mapPath: ride.mapPath2.isNotEmpty ? ride.mapPath2 : ride.mapPath),
 
               const SizedBox(height: 20),
 
@@ -67,11 +62,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                     Expanded(
                       child: Text(
                         "${ride.service} ride with ${ride.driverName}",
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 26,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: TextStyle(color: AppColors.white, fontSize: 26, fontWeight: FontWeight.w700),
                       ),
                     ),
                     CircleAvatar(
@@ -89,16 +80,12 @@ class ActivityDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "${ride.startTime} · ${ride.endTime}\n"
+                  "${'${DateFormat("MMM d").format(ride.date)} ${(ride.startTime).toUpperCase()}'}\n"
                   "€${ride.amount.toStringAsFixed(2)}"
                   "${ride.vehicle != null ? " · ${ride.vehicle}" : ""}",
-                  style: TextStyle(
-                    color: AppColors.white,
-                    height: 1.6,
-                  ),
+                  style: TextStyle(color: AppColors.white, height: 1.6),
                 ),
               ),
-
               const SizedBox(height: 20),
 
               ///RECEIPT
@@ -106,15 +93,9 @@ class ActivityDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: const [
-                    TripActionPill(
-                      icon: Icons.receipt_long,
-                      label: "Receipt",
-                    ),
+                    TripActionPill(icon: Icons.receipt_long, label: "Receipt"),
                     SizedBox(width: 12),
-                    TripActionPill(
-                      icon: Icons.description,
-                      label: "Invoice",
-                    ),
+                    TripActionPill(icon: Icons.description, label: "Invoice"),
                   ],
                 ),
               ),
@@ -127,7 +108,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 address: "${ride.start.address}, ${ride.start.postalCode} ${ride.start.city}, ${ride.start.country}",
                 time: ride.startTime,
               ),
-
+              SizedBox(height: 6),
               TripLocationRow(
                 isStart: false,
                 address:
@@ -135,7 +116,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 time: ride.endTime,
               ),
 
-              Divider(color: AppColors.grey),
+              CustomDivider(),
 
               //TIP
               TripInfoActionRow(
@@ -144,7 +125,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 actionText: ride.tip == 0 ? "Add tip" : "",
               ),
 
-              Divider(color: AppColors.grey),
+              CustomDivider(),
 
               //RATING
               TripInfoActionRow(
@@ -152,6 +133,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 text: ride.rating == 0 ? "No rating" : "Rated ${ride.rating}",
                 actionText: ride.rating == 0 ? "Rate" : "",
               ),
+              CustomDivider(),
 
               const SizedBox(height: 32),
 
@@ -160,11 +142,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   "Help & safety",
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: TextStyle(color: AppColors.white, fontSize: 23, fontWeight: FontWeight.w700),
                 ),
               ),
 
@@ -176,7 +154,7 @@ class ActivityDetailsScreen extends StatelessWidget {
                 subtitle: "We can help you get in touch with your driver",
               ),
 
-              Divider(color: AppColors.grey),
+              CustomDivider(),
 
               HelpActionTile(
                 icon: Icons.shield_outlined,
@@ -184,12 +162,29 @@ class ActivityDetailsScreen extends StatelessWidget {
                 subtitle: "Report any safety related issues to us",
               ),
 
-              Divider(color: AppColors.grey),
+              CustomDivider(),
+              SizedBox(height: 12),
               const CustomerSupportCard(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomDivider extends StatelessWidget {
+  const CustomDivider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SizedBox(width: 50),
+        Expanded(
+          child: Container(height: 0.2, width: double.infinity, color: AppColors.offWhite),
+        ),
+      ],
     );
   }
 }

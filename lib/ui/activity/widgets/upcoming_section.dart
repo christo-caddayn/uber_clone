@@ -17,31 +17,33 @@ class UpcomingSection extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            flex: 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "You have no upcoming trips",
-                  style: TextStyle(color: AppColors.white, fontSize: 13, fontWeight: FontWeight.w600),
-                ),
-                SizedBox(height: 4),
-                Row(
-                  children: [
-                    Text("Reserve your ride", style: TextStyle(color: AppColors.offWhite, fontSize: 11)),
-                    SizedBox(width: 4),
-                    SvgPicture.asset(
-                      Assets.icons.arrowRight,
-                      colorFilter: ColorFilter.mode(AppColors.offWhite, BlendMode.srcIn),
-                      height: 14,
-                      width: 14,
-                    ),
-                  ],
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "You have no upcoming trips",
+                    style: TextStyle(color: AppColors.white, fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Text("Reserve your ride", style: TextStyle(color: AppColors.white, fontSize: 14)),
+                      SizedBox(width: 4),
+                      SvgPicture.asset(
+                        Assets.icons.arrowRight,
+                        colorFilter: ColorFilter.mode(AppColors.offWhite, BlendMode.srcIn),
+                        height: 14,
+                        width: 14,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-          Expanded(flex: 1, child: Image.asset(Assets.images.reserveClockPng.path, height: 65, width: 65)),
+          Image.asset(Assets.images.reserveClockPng.path, height: 65, width: 65),
         ],
       ),
     );

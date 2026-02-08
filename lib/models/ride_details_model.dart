@@ -11,7 +11,9 @@ class RideDetailsModel {
   String vehicle;
   int tip;
   int rating;
+  String listTitle;
   String mapPath;
+  String mapPath2;
   DestinationModel start;
   DestinationModel destination;
 
@@ -26,24 +28,28 @@ class RideDetailsModel {
     required this.vehicle,
     required this.tip,
     required this.rating,
+    required this.listTitle,
     required this.mapPath,
+    required this.mapPath2,
     required this.start,
     required this.destination,
   });
 
   factory RideDetailsModel.fromJson(Map<String, dynamic> json) => RideDetailsModel(
-        date: DateTime.parse(json["date"] ?? ""),
-        startTime: json["startTime"] ?? "",
-        endTime: json["endTime"] ?? "",
-        amount: json["amount"]?.toDouble() ?? "",
-        currency: json["currency"] ?? "",
-        service: json["service"] ?? "",
-        driverName: json["driverName"] ?? "",
-        vehicle: json["vehicle"] ?? "",
-        tip: json["tip"] ?? 0,
-        rating: json["rating"] ?? 0,
-        mapPath: json["mapPath"] ?? "",
-        start: DestinationModel.fromJson(json["start"]),
-        destination: DestinationModel.fromJson(json["destination"]),
-      );
+    date: DateTime.parse(json["date"] ?? ""),
+    startTime: json["startTime"] ?? "",
+    endTime: json["endTime"] ?? "",
+    amount: json["amount"]?.toDouble() ?? "",
+    currency: json["currency"] ?? "",
+    service: json["service"] ?? "",
+    driverName: json["driverName"] ?? "",
+    vehicle: json["vehicle"] ?? "",
+    tip: json["tip"] ?? 0,
+    rating: json["rating"] ?? 0,
+    listTitle: json["listTitle"] ?? '',
+    mapPath: json["mapPath"] ?? "",
+    mapPath2: json["mapPath2"] ?? "",
+    start: DestinationModel.fromJson(json["start"]),
+    destination: DestinationModel.fromJson(json["destination"]),
+  );
 }

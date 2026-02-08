@@ -14,26 +14,51 @@ class RebookButton extends StatelessWidget {
       onTap: () => log("Button tapped"),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(16),
-        ),
+        decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(16)),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             SvgPicture.asset(
-              Assets.icons.refresh,
+              Assets.icons.iconExtraRebook,
               height: 14,
               width: 14,
-              colorFilter: ColorFilter.mode(
-                AppColors.offWhite,
-                BlendMode.srcIn,
-              ),
+              colorFilter: ColorFilter.mode(AppColors.offWhite, BlendMode.srcIn),
             ),
-            SizedBox(width: 4),
+            SizedBox(width: 8),
             Text(
               "Rebook",
-              style: TextStyle(color: AppColors.white, fontSize: 11, fontWeight: FontWeight.w200),
+              style: TextStyle(color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w400),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class RatingButton extends StatelessWidget {
+  const RatingButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => log("Button tapped"),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+        decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(16)),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset(
+              Assets.icons.iconExtraRateRide,
+              height: 14,
+              width: 14,
+              colorFilter: ColorFilter.mode(AppColors.offWhite, BlendMode.srcIn),
+            ),
+            SizedBox(width: 8),
+            Text(
+              "Rate",
+              style: TextStyle(color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w400),
             ),
           ],
         ),

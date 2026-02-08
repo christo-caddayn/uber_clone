@@ -46,7 +46,7 @@ class PastTripCard extends StatelessWidget {
               style: TextStyle(color: AppColors.white, fontSize: 14),
             ),
             SizedBox(height: 18),
-            RebookButton(),
+            Row(children: [RatingButton(), SizedBox(width: 12), RebookButton()]),
           ],
         ),
       ),

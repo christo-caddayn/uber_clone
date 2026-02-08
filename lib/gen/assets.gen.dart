@@ -70,6 +70,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Icon Extra - Rate Ride.svg
   String get iconExtraRateRide => 'assets/icons/Icon Extra - Rate Ride.svg';
 
+  /// File path: assets/icons/Icon Extra - Rebook.svg
+  String get iconExtraRebook => 'assets/icons/Icon Extra - Rebook.svg';
+
   /// File path: assets/icons/Icon Extra - Safety Issue.svg
   String get iconExtraSafetyIssue =>
       'assets/icons/Icon Extra - Safety Issue.svg';
@@ -133,6 +136,7 @@ class $AssetsIconsGen {
     iconExtraPickup,
     iconExtraPlanRide,
     iconExtraRateRide,
+    iconExtraRebook,
     iconExtraSafetyIssue,
     iconExtraTip,
     activity,
@@ -294,6 +298,18 @@ class $AssetsMapsGen {
   AssetGenImage get tajeddine =>
       const AssetGenImage('assets/maps/Tajeddine.png');
 
+  /// File path: assets/maps/Uber Trip 1.png
+  AssetGenImage get uberTrip1 =>
+      const AssetGenImage('assets/maps/Uber Trip 1.png');
+
+  /// File path: assets/maps/Uber Trip 2.png
+  AssetGenImage get uberTrip2 =>
+      const AssetGenImage('assets/maps/Uber Trip 2.png');
+
+  /// File path: assets/maps/Uber Trip 3.png
+  AssetGenImage get uberTrip3 =>
+      const AssetGenImage('assets/maps/Uber Trip 3.png');
+
   /// File path: assets/maps/Uzgur.png
   AssetGenImage get uzgur => const AssetGenImage('assets/maps/Uzgur.png');
 
@@ -319,6 +335,9 @@ class $AssetsMapsGen {
     ride4DetailIMG1273,
     ride5DetailIMG1274,
     tajeddine,
+    uberTrip1,
+    uberTrip2,
+    uberTrip3,
     uzgur,
     yusuf,
   ];
